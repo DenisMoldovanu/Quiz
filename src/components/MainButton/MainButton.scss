@@ -1,0 +1,23 @@
+@import "../../assets/scss/utils/vars.scss";
+
+.main-button {
+  button {
+    padding: 0;
+    border: 8px solid $aquamarine;
+    box-shadow: 8px 5px $creambrulee;
+
+    .second-border {
+      border: 5px solid $tussock;
+      background-color: $creambrulee;
+      color: $seagreen;
+      letter-spacing: 1.8px;
+      font-weight: 700;
+      font-family: $secondFont;
+      padding: 23px 42px;
+      &:hover {
+        background-color: $aquamarine;
+        cursor: pointer;
+      }
+    }
+  }
+}

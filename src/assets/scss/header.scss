@@ -1,0 +1,38 @@
+.header {
+  background-color: #171717;
+  padding: 10px 0px;
+  .display-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include respondto(phoneXs) {
+      flex-direction: column;
+    }
+  }
+
+  .discord-connect {
+    max-width: 400px;
+    width: 100%;
+
+    .discord-block {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border: 3px solid $creambrulee;
+      @include respondto(phone) {
+        font-size: 16px;
+        line-height: 28px;
+      }
+      img {
+        @include respondto(iphone5) {
+          display: none;
+        }
+      }
+      p {
+        color: $creambrulee;
+        font-family: $secondFont;
+      }
+    }
+  }
+}

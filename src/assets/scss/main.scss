@@ -1,0 +1,325 @@
+@import "imports";
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 2.5rem;
+  z-index: 2;
+  @include respondto(phone) {
+    padding: 0 1.5rem;
+  }
+}
+.layout {
+  background-color: $black;
+  padding: 83px 169px 0px 138px;
+  min-height: calc(100vh - 100px) !important;
+  @include respondto(maxTablet) {
+    padding: 83px 25px 0px 25px;
+  }
+  @include respondto(phone) {
+    padding: 25px 0px;
+  }
+}
+.display-flex {
+  display: flex;
+  align-items: center;
+}
+
+.page {
+  p {
+    text-transform: uppercase;
+    color: $white;
+    letter-spacing: 1.08px;
+    font-family: $mainFont;
+    margin-bottom: 60px;
+    max-width: 1088px;
+    width: 100%;
+    line-height: 32px;
+  }
+  h5 {
+    color: $creambrulee;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1.08px;
+    font-family: $secondFont;
+    margin-bottom: 60px;
+    line-height: 28px;
+    @include respondto(iphone5) {
+      font-size: 14px;
+    }
+  }
+}
+h4 {
+  color: $creambrulee;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.08px;
+  font-family: $secondFont;
+  margin-bottom: 40px;
+  line-height: 28px;
+  @include respondto(iphone5) {
+    font-size: 14px;
+  }
+}
+// .footer {
+//   margin-top: 145px;
+// }
+.footer-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include respondto(phoneXs) {
+    flex-direction: column;
+  }
+
+  span {
+    color: $seagreen;
+    font-size: 18px;
+    font-family: $secondFont;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  .active-page {
+    color: $creambrulee;
+  }
+  .block-left {
+    @include respondto(phoneXs) {
+      margin-bottom: 25px;
+    }
+  }
+}
+.main-button {
+  @include respondto(phoneXs) {
+    margin-bottom: 45px;
+  }
+}
+.tabel-test {
+  width: 100%;
+  margin-bottom: 61px;
+  .question-line {
+    padding: 10px 0px;
+    display: flex;
+    align-items: center;
+    // background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='white' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    border-top: 2px dashed $white;
+
+    #points {
+      width: 38px;
+      height: 30px;
+      background-color: transparent;
+      color: white;
+      font-size: 25px;
+      margin-left: 31px;
+      margin-right: 1px;
+      padding-left: 0px;
+    }
+
+    .number-input {
+      margin-left: auto;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        width: 60px;
+        height: 18px;
+        border-right: 1px solid white;
+        border-left: 1px solid white;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        width: 60px;
+        height: 18px;
+        border-right: 1px solid white;
+        border-left: 1px solid white;
+      }
+    }
+    &:last-child {
+      border-bottom: 2px dashed $white;
+    }
+  }
+  li {
+    color: $white;
+    font-family: $mainFont;
+    font-size: 18px;
+    letter-spacing: 1.08px;
+    margin-left: 30px;
+  }
+}
+.checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 1px;
+    width: 45px;
+    height: 18px;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 1px;
+    width: 45px;
+    height: 18px;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+  }
+}
+
+/* Hide the browser's default checkbox */
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 60px !important;
+  width: 40px !important;
+  left: 0px;
+  top: -25px;
+  z-index: 99;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 4px;
+  height: 30px;
+  width: 30px;
+  background-color: $black;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox:hover input ~ .checkmark::after {
+  border-color: $white;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox input:checked ~ .checkmark {
+  background-color: $black;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+}
+
+/* Show the checkmark when checked */
+.checkbox input:checked ~ .checkmark:after {
+  display: block;
+  border-color: $creambrulee;
+}
+
+/* Style the checkmark/indicator */
+.checkbox .checkmark:after {
+  left: 14px;
+  top: -6px;
+  width: 10px;
+  height: 20px;
+  border: solid grey;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.error {
+  color: red;
+  font-size: 20px;
+  font-family: $secondFont;
+  text-align: right;
+  margin-top: 30px;
+  line-height: 30px;
+
+  @include respondto(maxTablet) {
+    text-align: left;
+    line-height: 32px;
+  }
+}
+
+.finish-title {
+  margin-bottom: 0px !important;
+}
+.second-title {
+  margin-bottom: 10px !important;
+}
+.share-twitter {
+  gap: 18px;
+  margin-bottom: 58px;
+  img {
+    @include respondto(phoneXs) {
+      display: none;
+    }
+  }
+  @include respondto(phoneXs) {
+    margin-bottom: 0px;
+  }
+}
+.column {
+  flex-direction: column;
+}
+.characteristics-title {
+  color: $white;
+  letter-spacing: 1.08px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+}
+.characteristics-title-top {
+  display: block;
+  color: $white;
+  letter-spacing: 1.08px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+.characteristics-content {
+  text-transform: uppercase;
+  color: $white;
+  letter-spacing: 1.08px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 60px;
+}
+.end-page {
+  p {
+    text-transform: none;
+  }
+  .conclusion-text {
+    color: $aquamarine;
+    letter-spacing: 1.08px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+.end-flex {
+  @include respondto(phoneXs) {
+    flex-direction: column !important;
+    img {
+      margin-bottom: 20px;
+    }
+  }
+}
