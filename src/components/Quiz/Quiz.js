@@ -37,7 +37,7 @@ const Quiz = () => {
     );
   }, [step]);
 
-  const handleChange = (checked, id, value = 0) => {
+  const handleChange = (checked, id, value = "") => {
     if (checked) {
       setStepResults([
         ...stepResults.filter((q) => q.id !== id),
@@ -158,6 +158,16 @@ const Quiz = () => {
                     stepResults.find((q) => q.id === post.id) ? false : true
                   }
                   onChange={(e) => handleChange(true, post.id, e.target.value)}
+                  onFocus={() => {
+                    if (stepResults.find((q) => q.id === post.id).value == 0) {
+                      handleChange(true, post.id, "");
+                    }
+                  }}
+                  onBlur={() => {
+                    if (stepResults.find((q) => q.id === post.id).value == "") {
+                      handleChange(true, post.id, 0);
+                    }
+                  }}
                 />
               </div>
             </div>

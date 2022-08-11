@@ -27,6 +27,7 @@
 }
 
 .page {
+  min-height: calc(100vh - 433px) !important;
   p {
     text-transform: uppercase;
     color: $white;
@@ -108,11 +109,13 @@ h4 {
       width: 38px;
       height: 30px;
       background-color: transparent;
+      font-family: "Courier Prime", monospace;
       color: white;
       font-size: 25px;
-      margin-left: 31px;
-      margin-right: 1px;
+      margin-left: 16px;
+      margin-right: 4px;
       padding-left: 0px;
+      text-align: center;
     }
 
     .number-input {
@@ -123,7 +126,7 @@ h4 {
         position: absolute;
         top: -10px;
         left: 10px;
-        width: 60px;
+        width: 48px;
         height: 18px;
         border-right: 1px solid white;
         border-left: 1px solid white;
@@ -133,7 +136,7 @@ h4 {
         position: absolute;
         top: 20px;
         left: 10px;
-        width: 60px;
+        width: 48px;
         height: 18px;
         border-right: 1px solid white;
         border-left: 1px solid white;
@@ -290,6 +293,7 @@ input[type="number"]::-webkit-outer-spin-button {
   margin-bottom: 10px;
 }
 .characteristics-title-top {
+  text-decoration: underline;
   display: block;
   color: $white;
   letter-spacing: 1.08px;
